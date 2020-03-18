@@ -14,7 +14,11 @@ As vezes o bot pode estar online, que é quando eu já estou rodando ele no meu 
 Caso contrário, você pode utilizar o node para rodar na sua máquina, basta seguir os seguintes passos:
 ### 1. Baixe o node em: https://nodejs.org/en/download/
 ### 2. Baixe o bot em: https://github.com/LeoBardineo/Bardo-Bot/archive/master.zip
-### 3. Execute o arquivo `iniciarBot.bat`
+### 3. Acesse o portal de desenvolvedor do Discord em: https://discordapp.com/developers/applications
+### 4. Crie uma nova aplicação no botão superior direito
+### 5. Crie um novo bot na aba bot ao lado esquerdo
+### 6. Copie o token desse bot e insira ele no arquivo `bot.js` na constante token
+### 7. Execute o arquivo `iniciarBot.bat`
 
 ## :computer: API Utilizadas
 - Cotação do Dolar [(documentação)](https://docs.awesomeapi.com.br/api-de-moedas): https://economia.awesomeapi.com.br/all/USD-BRL
