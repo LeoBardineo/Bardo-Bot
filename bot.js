@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const request = require("request");
 const client = new Discord.Client();
-const token = "NjgyNTkzNTQ2NTExMTg4MDI1.XnJVxg.gOi2tlJIT74X_hnq_XBgyThZ_wI";
+const token = "NjgyNTkzNTQ2NTExMTg4MDI1.XnJtiA.8rNkBm7lKNoyeiNaGZpJGJYPV6M";
 const apiDolar = "https://economia.awesomeapi.com.br/all/USD-BRL";
 const apiCorona = "https://coronavirus-19-api.herokuapp.com/all";
 
@@ -23,13 +23,13 @@ client.on("guildDelete", guild => {
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome');
     if (!channel) return;
-    channel.send(`Bem-vindo ao Asilo, ${member}!`, {files: ["./imgs/tenor.gif"]});
+    channel.send(`Bem-vindo ao ${guild.name}, ${member}!`, {files: ["./imgs/tenor.gif"]});
 });
 
 client.on('guildMemberRemove', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome');
     if (!channel) return;
-    channel.send(`${member} saiu do Asilo.`, {files: ["./imgs/giphy.gif"]});
+    channel.send(`${member} saiu do ${guild.name}.`, {files: ["./imgs/giphy.gif"]});
 });
 
 client.on("message", async message => {
