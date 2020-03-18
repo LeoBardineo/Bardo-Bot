@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const request = require("request");
 const client = new Discord.Client();
-const token = "NjgyNTkzNTQ2NTExMTg4MDI1.XnJtiA.8rNkBm7lKNoyeiNaGZpJGJYPV6M";
+const token = `insira o token aqui`;
 const apiDolar = "https://economia.awesomeapi.com.br/all/USD-BRL";
 const apiCorona = "https://coronavirus-19-api.herokuapp.com/all";
 
