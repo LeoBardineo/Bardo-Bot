@@ -6,7 +6,7 @@ Bardo Bot
 <h3 align="center"> Bot feito por mim para o Discord com funções diversas e divertidas. </h3>
 
 ## :book: Guia de uso
-### Entre no link dentro do arquivo authorize.txt [(esse aqui)](https://discordapp.com/oauth2/authorize?=&client_id=682593546511188025&scope=bot&permissions=8) e adicione o bot para o servidor desejado
+### Entre no link [(esse aqui)](https://discordapp.com/oauth2/authorize?=&client_id=682593546511188025&scope=bot&permissions=8) dentro do arquivo authorize.txt e adicione o bot para o servidor desejado
 
 ## :mobile_phone_off: O bot não está online, e agora?
 As vezes o bot pode estar online, que é quando eu já estou rodando ele no meu computador.
