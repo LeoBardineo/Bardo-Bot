@@ -22,7 +22,7 @@ Caso contrário, você pode utilizar o node para rodar na sua máquina, basta se
 
 ## :scroll: Funções implementadas
 - bom dia / tarde / noite - Responde com bom dia / tarde / noite
-- ;falar <mensagem> - Fala no canal uma mensagem
+- ;falar mensagem - Fala a mensagem no canal
 - ;ping - Verifica a latência
 - ;join - Entra em um canal de voz
 - ;leave - Sai de um canal de voz
