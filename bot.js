@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const request = require("request");
 const client = new Discord.Client();
-const token = "NjgyNTkzNTQ2NTExMTg4MDI1.XnJtiA.8rNkBm7lKNoyeiNaGZpJGJYPV6M";
+const token = "NjgyNTkzNTQ2NTExMTg4MDI1.XnJw0w.xV0UE8KSQKIt9oeocDalSKIY-Jk";
 const apiDolar = "https://economia.awesomeapi.com.br/all/USD-BRL";
 const apiCorona = "https://coronavirus-19-api.herokuapp.com/all";
 
@@ -69,14 +69,8 @@ client.on("message", async message => {
         });
     }
 
-    if(comando === ";corona"){
-        request(`${apiCorona}`, (err, rs, body) => {
-            let apiJSON = JSON.parse(body);
-            let qtdCases = apiJSON.cases;
-            let qtdDeaths = apiJSON.deaths;
-            let qtdRecovered = apiJSON.recovered;
-            message.channel.send(`<:Corona:688343852259868712> Atualmente o corona vírus tem ${qtdCases} casos, ${qtdDeaths} mortes e ${qtdRecovered} recuperados. <:Virus:688343850900783130>`);
-        });
+    if(comando === ";comandos" || comando === ";ajuda"){
+        message.channel.send("Toda a documentação do bot se encontra em: https://github.com/LeoBardineo/Bardo-Bot");
     }
 
     if(comando.startsWith(";falar")){
@@ -88,6 +82,35 @@ client.on("message", async message => {
         console.log(message.author.username+" falou "+content+" pelo bot");
         message.delete();
         message.channel.send(content);
+    }
+
+    if(comando.startsWith(";corona")){
+        if(comando === ";corona"){
+            request(`${apiCorona}`, (err, rs, body) => {
+                let apiJSON = JSON.parse(body);
+                let qtdCases = apiJSON.cases;
+                let qtdDeaths = apiJSON.deaths;
+                let qtdRecovered = apiJSON.recovered;
+                message.channel.send(`<:Corona:688343852259868712> Atualmente o corona vírus tem ${qtdCases} casos, ${qtdDeaths} mortes e ${qtdRecovered} recuperados. <:Virus:688343850900783130>`);
+            });
+        }else{
+            let pais = message.content.replace(";corona", "");
+            pais = pais.trim().toLowerCase();
+            pais = pais.charAt(0).toUpperCase() + pais.slice(1);
+            let apiCoronaPais = `https://coronavirus-19-api.herokuapp.com/countries/${pais}`;
+            request(`${apiCoronaPais}`, (err, rs, body) => {
+                if(body != "Country not found"){
+                    let apiJSON = JSON.parse(body);
+                    let qtdCases = apiJSON.cases;
+                    let qtdDeaths = apiJSON.deaths;
+                    let qtdRecovered = apiJSON.recovered;
+                    message.channel.send(`<:Corona:688343852259868712> Atualmente, no(a) ${pais},  o corona vírus tem ${qtdCases} casos, ${qtdDeaths} mortes e ${qtdRecovered} recuperados. <:Virus:688343850900783130>`);
+                }else{
+                    message.channel.send(`Não consegui identificar qual país foi digitado.`);
+                    message.channel.send(`Lista de países: https://coronavirus-19-api.herokuapp.com/countries`);
+                }
+            });
+        }
     }
 });
 
