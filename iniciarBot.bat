@@ -1,1 +1,3 @@
-node bot.js
+@echo off
+cls
+yarn run start
