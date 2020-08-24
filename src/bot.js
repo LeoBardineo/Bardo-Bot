@@ -37,14 +37,14 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.author.bot) return
   if (message.channel.type === 'dm') return
-  if (greetingsString.includes(message.content)) {
-    const greeting = message.content
+  if (greetingsString.includes(message.content.toLowerCase())) {
+    const greeting = message.content.toLowerCase()
     client.greetings.get(greeting).execute(message)
   }
   if (!message.content.startsWith(process.env.PREFIX)) return
 
   const args = message.content.slice(process.env.PREFIX.length).split(" ")
-  const command = args.shift()
+  const command = args.shift().toLowerCase()
 
   try {
     client.commands.get(command).execute(client, message, args)
