@@ -1,0 +1,5 @@
+anotacoes
+node_modules
+.vscode
+.env
+*.log
